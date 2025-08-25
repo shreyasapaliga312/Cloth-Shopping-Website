@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid lightgray;
+            width: 350px;
+            padding: 25px;
+            gap: 15px;
+            background-color: white;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            padding: 8px;
+            border: 1px solid lightgray;
+            border-radius: 8px;
+        }
+
+        .error, .required {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: red;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <i class="fa-solid fa-user"></i>
+    <button id="open-form">Open Sign-up Form</button>
+
+    <div class="popup" id="popup">
+        <div class="form-container">
+            <button class="close-btn" id="close-popup">&times;</button>
+            <h2 style="text-align: center;">Sign-up Form</h2>
+            <form action="css1.html" method="get" onsubmit="return validation()">
+                <div class="form-field">
+                    <label for="name">Name: <span class="required">*</span></label>
+                    <input type="text" id="name" name="name">
+                    <div class="error" id="name-error"></div>
+                </div>
+
+                <div class="form-field">
+                    <label for="address">Address: </label>
+                    <textarea id="address" name="address" rows="5" cols="20"></textarea>
+                    <div class="error" id="address-error"></div>
+                </div>
+
+                <div class="form-field">
+                    <label for="phone">Phone:<span class="required">*</span></label>
+                    <input type="text" id="phone" name="phone">
+                    <div class="error" id="phone-error"></div>
+                </div>
+
+                <div class="form-field">
+                    <label for="email">E-mail:<span class="required">*</span></label>
+                    <input type="text" id="email" name="email">
+                    <div class="error" id="email-error"></div>
+                </div>
+
+                <div class="form-field">
+                    <label for="password">Password:<span class="required">*</span></label>
+                    <input type="password" id="password" name="password">
+                    <div class="error" id="password-error"></div>
+                </div>
+
+                <div class="form-field">
+                    <label for="password1">Re-enter Password:<span class="required">*</span></label>
+                    <input type="password" id="password1" name="password1">
+                    <div class="error" id="password1-error"></div>
+                </div>
+
+                <div class="form-field">
+                    <input type="submit" id="submit" value="Submit">
+                </div><br>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const openFormButton = document.getElementById('open-form');
+        const popup = document.getElementById('popup');
+        const closePopupButton = document.getElementById('close-popup');
+
+        openFormButton.onclick = function() {
+            popup.style.display = 'flex';
+        };
+
+        closePopupButton.onclick = function() {
+            popup.style.display = 'none';
+        };
+
+        // Function for validation (placeholder)
+        function validation() {
+            // Add your validation logic here
+            return true; // Change this based on validation
+        }
+    </script>
+    <script src="form_validation1.js"></script>
+
+</body>
+</html>

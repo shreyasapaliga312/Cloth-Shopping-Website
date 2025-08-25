@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .form-container{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid lightgray;
+            margin: 70px auto;
+            max-width: 400px;
+            padding: 25px;
+            gap: 15px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .form-field{
+            display: flex;
+            flex-direction: column;
+        }
+        label{
+            margin-bottom: 5px;
+        }
+
+        .form-container input, .form-container textarea{
+            padding: 8px;
+            border: 1px solid lightgray;
+            border-radius: 8px;
+        }
+        .error, .required {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <form action="css1.html" method="get" onsubmit="return validation()" class="form-container">
+        <h2 style="text-align: center;">Sign-up Form</h2>
+        <div class="form-field">
+            <label for="name">Name: <span class="required">*</span></label>
+            <input type="text" id="name" name="name">
+            <div class="error" id="name-error"></div>
+        </div>
+
+        <div class="form-field">
+            <label for="address">Address: </label>
+            <textarea id="address" name="address" rows="5" cols="20"></textarea>
+            <div class="error" id="address-error"></div>
+        </div>
+
+        <div class="form-field">
+            <label for="phone">Phone:<span class="required">*</span></label>
+            <input type="text" id="phone" name="phone">
+            <div class="error" id="phone-error"></div>
+        </div>
+
+        <div class="form-field">
+            <label for="email">E-mail:<span class="required">*</span></label>
+            <input type="text" id="email" name="email">
+            <div class="error" id="email-error"></div>
+        </div>
+
+        <div class="form-field">
+            <label for="password">Password:<span class="required">*</span></label>
+            <input type="password" id="password" name="password">
+            <div class="error" id="password-error"></div>
+        </div>
+
+        <div class="form-field">
+            <label for="password1">Re-enter Password:<span class="required">*</span></label>
+            <input type="password" id="password1" name="password1">
+            <div class="error" id="password1-error"></div>
+        </div>
+
+        <div class="form-field">
+            <input type="submit" id="submit" value="Submit">
+        </div>
+    </form>
+    <script src="form_validation.js"></script>
+</body>
+</html>
